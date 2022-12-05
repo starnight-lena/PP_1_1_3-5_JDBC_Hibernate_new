@@ -32,7 +32,20 @@ public class UserDaoHibernateImpl implements UserDao {
 
     @Override
     public List<User> getAllUsers() {
-        return null;
+
+        //open session with a transaction
+        openTransactionSession();
+
+        String sql = "SELECT * FROM ADDRESS";
+
+        Session session = getSession();
+        Query query = session.createNativeQuery(sql).addEntity(Address.class);
+        List<Address> addressList = query.list();
+
+        //close session with a transaction
+        closeTransactionSesstion();
+
+        return addressList;
     }
 
     @Override
