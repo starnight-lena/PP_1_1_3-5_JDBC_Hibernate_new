@@ -11,6 +11,7 @@ import java.sql.Connection;
 public class Main {
     public static void main(String[] args) {
         // реализуйте алгоритм здесь
+        //test
         Util util = new Util();
         util.getConnection();
         UserDao userDao = new UserDaoJDBCImpl();
